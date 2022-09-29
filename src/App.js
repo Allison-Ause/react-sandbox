@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './components/Home/Home';
 import Create from './components/Create/Create';
 import NavBar from './components/NavBar/NavBar';
+import Spells from './components/Spells/Spells';
 
 function App() {
   return (
@@ -15,12 +16,9 @@ function App() {
         <div className="content">
           <Switch>
             {/* Things within the switch change based on the route. */}
-            <Route path="/create">
-              <Create />
-            </Route>
-            <Route exact path="/">
-              <Home />
-            </Route>
+            <Route path="/create" component={Create} />
+            <Route path="/spells" component={Spells} />
+            <Route exact path="/" component={Home} />
           </Switch>
         </div>
       </div>
