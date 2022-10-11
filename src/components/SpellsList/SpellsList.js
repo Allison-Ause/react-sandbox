@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom';
 import SpellCard from '../SpellCard/SpellCard';
+import './SpellsList.css';
 
 export default function SpellsList({ spells }) {
   return (
-    <div>
+    <div className="spells-container">
       {spells.map((spell) => (
         <div key={spell.id}>
           <SpellCard key={spell.id} {...spell} />

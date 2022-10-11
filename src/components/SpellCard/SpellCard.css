@@ -1,0 +1,9 @@
+.spell-card {
+  display: flex;
+  flex-direction: column;
+  border: black solid 2px;
+  width: 300px;
+  height: 400px;
+  border-radius: 5%;
+  overflow: hidden;
+}

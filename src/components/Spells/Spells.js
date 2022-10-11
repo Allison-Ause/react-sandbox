@@ -1,5 +1,6 @@
 import { useSpells } from '../../hooks/useSpells';
 import SpellsList from '../SpellsList/SpellsList';
+import './Spells.css';
 
 export default function Spells(id) {
   const { spells, loading } = useSpells(id);
