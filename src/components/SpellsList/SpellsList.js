@@ -7,8 +7,8 @@ export default function SpellsList({ spells }) {
     <div className="spells-container">
       {spells.map((spell) => (
         <div key={spell.id}>
-          <SpellCard key={spell.id} {...spell} />
-          <Link key={spell.id} to={`/spells/${spell.id}`}></Link>
+          <SpellCard {...spell} />
+          <Link to={`/spells/${spell.id}`}></Link>
         </div>
       ))}
     </div>

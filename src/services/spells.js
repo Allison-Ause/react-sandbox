@@ -1,14 +1,13 @@
-export async function fetchSpells() {
-  const res = await fetch('https://wizard-world-api.herokuapp.com/Spells');
-  const data = await res.json();
-  return data;
-}
+// export async function fetchAllSpells() {
+//   const res = await fetch('https://wizard-world-api.herokuapp.com/');
+//   const data = await res.json();
+//   return data;
+// }
 
-// https://wizard-world-api.herokuapp.com/Spells?Type=Charm
-// pass
-export async function fetchSpellsByType(type) {
-  const res = await fetch(`https://wizard-world-api.herokuapp.com/Spells?Type=${type}`);
+export async function fetchSpellsByType(selectedType) {
+  const params = new URLSearchParams();
+  if (selectedType !== 'Any') params.set('Type', selectedType);
+  const res = await fetch(`https://wizard-world-api.herokuapp.com/Spells?${params.toString()}`);
   const data = await res.json();
-  console.log('data');
   return data;
 }
