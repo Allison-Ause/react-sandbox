@@ -4,6 +4,7 @@ import { fetchSpells } from '../services/spells';
 export function useSpells(id) {
   const [spells, setSpells] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [type, setType] = useState('Any');
 
   useEffect(() => {
     const fetchData = async () => {
@@ -20,5 +21,15 @@ export function useSpells(id) {
     };
     fetchData();
   }, [id]);
-  return { spells, loading };
+
+  // call new function fetchSpellsByType
+  // pass in the type, fetch just those and return for display
+  const filteredByType = () => {
+    const spellsByType = spells.filter((spell) => {
+      if (type === 'Any') return true;
+      return spell.type === type;
+    });
+    return spellsByType;
+  };
+  return { spells, loading, filteredByType };
 }
