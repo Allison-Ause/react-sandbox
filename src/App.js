@@ -6,6 +6,7 @@ import Home from './components/Home/Home';
 import Create from './components/Create/Create';
 import NavBar from './components/NavBar/NavBar';
 import Spells from './components/Spells/Spells';
+import Familiars from './components/Familiars/Familiars';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             {/* Things within the switch change based on the route. */}
             <Route path="/create" component={Create} />
             <Route path="/spells" component={Spells} />
+            <Route path="familiars" component={Familiars}/>
             <Route exact path="/" component={Home} />
           </Switch>
         </div>

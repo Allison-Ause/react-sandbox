@@ -6,6 +6,7 @@ export default function NavBar() {
     <nav>
       <Link to="/">Home</Link>
       <Link to="/Spells">Spell Compendium</Link>
+      <Link to="/Familiars">Familiars Menagerie</Link>
       <Link to="/create">Create Post</Link>
     </nav>
   );
