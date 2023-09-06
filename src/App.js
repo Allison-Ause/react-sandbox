@@ -18,8 +18,8 @@ function App() {
           <Switch>
             {/* Things within the switch change based on the route. */}
             <Route path="/create" component={Create} />
+            <Route path="/familiars" component={Familiars}/>
             <Route path="/spells" component={Spells} />
-            <Route path="familiars" component={Familiars}/>
             <Route exact path="/" component={Home} />
           </Switch>
         </div>

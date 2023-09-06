@@ -1,19 +1,17 @@
-import { fetchFamiliars } from '../../services/familiars';
+import { useFamiliars } from '../../hooks/useFamiliars';
 import Familiar from './Familiar';
 
 export default function Familiars() {
-  // create api service call then import here to bring in familiars
-  //const familiars = fetchFamiliars();
-  //console.log('familiars:', familiars);
+  const { familiars } = useFamiliars();
 
   return (
-    <div>
+    <div className="home">
       <h1>Check out this incredible list of familiars!</h1>
-      {/* {familiars.map((familiar) => (
-        <div key = {familiar.id}>
-          <Familiar {...familiar}/>
-        </div>
-      ))} */}
+      <div>
+        {familiars.map((familiar) => (
+          <Familiar key = {familiar._id}{...familiar}/>
+        ))}
+      </div>
     </div>
   );
 }
